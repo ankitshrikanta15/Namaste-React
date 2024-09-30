@@ -4,27 +4,24 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link rel="stylesheet" href="./index.css">
   </head>
   <body>
-    <div id="root"></div>
+    <h1>Hello Top oof Root</h1> // this dont change
+    <div id="root"> // react will apply on the root id only
+      <h1>Ankit is here</h1> //root.render replace the file it will be removed{all}
+    </div>
+    <h1>Hello B ellow the Root</h1>
 
     <script
-      crossorigin
+      crossorigin 
       src="https://unpkg.com/react@18/umd/react.development.js"
     ></script>
     <script
       crossorigin
       src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
     ></script>
-
-    <script>
-      const heading = React.createElement("h1",{}, "Hello World from reactJS!!");
-
-      const root = ReactDOM.createRoot(document.getElementById("root"));
-
-      root.render(heading);
-
-    </script>
+    <script src="App.js"></script>
 
     <!-- <script>
     const heading  = document.createElement("h1");
