@@ -6,7 +6,7 @@ const elem = <span>React Element</span>
 const Title = () => (
   <h1 className="head" tabIndex="5">
     {elem}
-    Namasate React using JSX.
+    Namasate React using JSX. 🚀
   </h1>
 );
 
