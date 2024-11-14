@@ -23,4 +23,3 @@ const HeadingComponent2 = () => (
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
 root.render(<HeadingComponent2 />);
- 
