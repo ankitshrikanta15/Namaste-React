@@ -1,3 +1,104 @@
-#heading {
-  color: salmon;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Gilroy';
 }
+
+html, body {
+  height: 100%;
+  width: 100%;
+}
+
+.header {
+  /* height: 80px; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* background-color: red; */
+  /* border: 1px solid black; */
+  box-shadow: 0 15px 40px -20px rgba(40,44,63,.15);
+}
+
+.logo {
+  width: 80px
+}
+
+.nav-items {
+  display: flex;
+}
+
+.nav-items > h3 {
+  padding: 10px;
+  /* font-weight: 500; */
+  font-size: 15px;
+  padding-right: 30px;
+}
+
+.body {
+  padding: 20px;;
+}
+
+.search {
+  padding: 20px
+}
+
+.restaurant-container {
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: 100px;
+
+}
+
+.restaurant-card {
+  height: 300px;
+  width: 280px;
+  /* border: 1px solid black; */
+  border-radius: 20px;
+  font-family: 'Gilroy';
+  /* background-color: pink; */
+  margin: 20px;
+}
+
+.restaurant-card:hover {
+  scale: 0.9;
+  cursor: pointer;
+  transition: 0.5s;
+  animation: ease-in-out;
+}
+
+.restaurant-card > img {
+  height: 60%;
+  width: 100%;
+  object-fit: cover;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+}
+
+.restaurant-card-details {
+  /* margin-top: 30px; */
+  padding: 0 10px;
+  color: #161A1F;
+  padding-top: 10px;
+}
+
+.restaurant-card-details h3 {
+  font-size: 18px;
+  padding-bottom: 3px;
+}
+
+.restaurant-card-details h4 {
+  font-size: 16px;
+  padding-bottom: 5px;
+}
+
+.restaurant-card-details h5 {
+  font-size: 16px;
+  font-weight: 500;
+  color: #787878;
+}
+
+.restaurant-card-details h5:nth-child(4){
+  margin-bottom: 60px;
+}
+
