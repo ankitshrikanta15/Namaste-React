@@ -89,7 +89,7 @@ const resList = [
     },
     widgetId: "collectionV5RestaurantListWidget_SimRestoRelevance_food_seo",
   },
-  { 
+  {  
     info: {
       id: "606512",
       name: "Chinese Wok",

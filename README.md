@@ -72,3 +72,10 @@ This repository contains the code for the Namaste React course.
 
  - useState() - It used to generate superpowerful react variables.
  - useEffect()
+
+ ## conditional Rendering 
+
+  - conditional render ing
+  - if(listOfRestaurants.length === 0) {
+  -  return <Shimmer />
+  - }
