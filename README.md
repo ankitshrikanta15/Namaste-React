@@ -79,3 +79,21 @@ This repository contains the code for the Namaste React course.
   - if(listOfRestaurants.length === 0) {
   -  return <Shimmer />
   - }
+
+  ## useEffect()
+
+  ### When the Use Effect is called ?
+  - So basically the useEffect called after every render of that component, but because we put the dependency array it changes the behaviour of its render
+
+  - if no dependency array => useEffect called on Every Rendering cycle
+  - if the dependency arraay is empty = [] => useEffect is called on initial render(just once)
+  - if we put somwwthing inside the dependency array => then it will be only called when the dependency changes
+  - E.g. [btnNameReact] => UseEffect called everytime the btnNameReact updates.
+
+  -NOTE - hooks can called only inside a function component never call it outside, try it called it on the top, never called it inside if...else function it can create inconsistent in your progrm.
+
+  ## Routing
+
+  - There are two types of routing
+    - Server side Routing
+    - Client side Routing
