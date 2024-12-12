@@ -97,3 +97,7 @@ This repository contains the code for the Namaste React course.
   - There are two types of routing
     - Server side Routing
     - Client side Routing
+
+# React Life Cycle Diagram
+
+- [https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/]
