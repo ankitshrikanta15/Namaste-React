@@ -1,8 +1,9 @@
-import RestaurantCard from "./RestaurantCard";
+import RestaurantCard, { withPromotedLabel } from "./RestaurantCard";
 import { useState, useEffect } from "react";
 import Shimmer from "./Shimmer";
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
+import 'remixicon/fonts/remixicon.css'
 
 const Body = () => {
   // Local state variable - superPowerful variable
@@ -11,13 +12,17 @@ const Body = () => {
 
   const [searchText, setSearchText] = useState("");
 
+  const RestaurantCardPromoted = withPromotedLabel(RestaurantCard);
+
+  // console.log("BODY RENDERED", listOfRestaurants);
+
   //Normal JS Variable
   // let listOfRestaurants = [ ];
 
   useEffect(() => {
     fetchData();
   }, []);
- 
+
   const fetchData = async () => {
     const data = await fetch(
       "https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.7309194&lng=77.1277312&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
@@ -25,17 +30,21 @@ const Body = () => {
 
     const json = await data.json();
 
-    console.log(json);
+    // console.log(json);
     setListOfRestaurants(
       json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
-    setFilteredRestaurant(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+    setFilteredRestaurant(
+      json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+    );
   };
 
   const onlineStatus = useOnlineStatus();
-  if(onlineStatus === false) 
+  if (onlineStatus === false)
     return (
-      <h1>Looks like you're offline!!! Please check your internet connection.</h1>
+      <h1>
+        Looks like you're offline!!! Please check your internet connection.
+      </h1>
     );
 
   const handleTopRatedClick = () => {
@@ -81,24 +90,29 @@ const Body = () => {
               setFilteredRestaurant(filtered);
             }}
           />
-          <button
+          {/* <button
             onClick={() => {
               console.log(searchText);
 
-              const filteredRestaurant = listOfRestaurants.filter(
-                (res) => res.info.name.toLowerCase().includes(searchText.toLowerCase())
+              const filteredRestaurant = listOfRestaurants.filter((res) =>
+                res.info.name.toLowerCase().includes(searchText.toLowerCase())
               );
               setFilteredRestaurant(filteredRestaurant);
             }}
             className="search-btn p-3 rounded border-2 border-solid bg-slate-800 border-black text-white"
           >
             Search
-          </button>
+          </button> */}
         </div>
       </div>
       <div className="restaurant-container flex flex-wrap pl-28">
         {filteredRestaurant.map((restaurant, index) => (
-          <Link key={restaurant.info.id} to={"/restaurants/"+ restaurant.info.id}><RestaurantCard resData={restaurant} /></Link>
+          <Link
+            key={restaurant.info.id}
+            to={"/restaurants/" + restaurant.info.id}
+          >
+            {restaurant.info.avgRating >= 4.3 ? (<RestaurantCardPromoted resData ={restaurant} />) : (<RestaurantCard resData={restaurant} />)}
+          </Link>
         ))}
       </div>
     </div>

@@ -1,5 +1,6 @@
 import React from "react";
 
+
 class UserClass extends React.Component {
   constructor(props) {
     super(props);
@@ -24,7 +25,7 @@ class UserClass extends React.Component {
       userInfo: json,
     })
 
-    console.log(json);
+    // console.log(json);
     
   }
 
