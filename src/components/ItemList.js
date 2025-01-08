@@ -1,7 +1,16 @@
+import { useDispatch } from "react-redux";
+import { addItem } from "../utils/cartSlice";
 import { NON_VEG, VEG, ITEM_IMAGE } from "../utils/constants";
 
 const ItemList = ({items}) => {
   console.log(items);
+
+  const dispatch = useDispatch();
+
+const handleAddItem = (item) => {
+  //Dispatch an action
+  dispatch(addItem(item))
+}
   
   return (
     <div>
@@ -19,11 +28,12 @@ const ItemList = ({items}) => {
             <p className="pt-[20px] pb-[100px] tracking-tight font-medium text-[#676A6D]">{item.card.info.description}</p>
           </div>
           <div className="relative">
-            <img className="h-[144px] w-[156px] object-cover rounded-2xl" src={ITEM_IMAGE + item.card.info.imageId} alt="The Restaurant didn't provide any image for this item." />
+            <img className="h-[144px] w-[156px] object-cover rounded-2xl" src={ITEM_IMAGE + item.card.info.imageId} alt="The Restaurant didn't provide any image for this item." /> 
             
             <div className="absolute -bottom-5 left-0 right-0 flex justify-center">
               <button 
                 className="bg-white px-8 py-2 rounded-lg shadow-md border text-green-500 font-bold hover:shadow-lg hover:bg-slate-200"
+                onClick={() => handleAddItem(item)}
               >
                 ADD
               </button>

@@ -101,3 +101,15 @@ This repository contains the code for the Namaste React course.
 # React Life Cycle Diagram
 
 - [https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/]
+
+
+# Redux Toolkit
+
+- Install Library @reduxjs/toolkit
+  - redux toolkit
+  - react-redux
+- Build our Store
+- Connect our Store to our App
+- Create a Slice (cartSlice)
+- Dispatch (action)
+- Selector
